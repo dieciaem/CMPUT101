@@ -1,0 +1,35 @@
+evenList = []
+oddList = []
+
+def rCheck():
+	print("*Enter a range of numbers.*")
+	first = int(input("First number: "))
+	last = int(input("Last number: "))
+	skip = int(input("Enter a skip factor: "))
+	n = first
+	if first%2 == 0:
+		evenList.append(first)
+	else:
+		oddList.append(first)
+	while n < last:
+		n = n + skip
+		if n%2 == 0 and n <= last:
+			evenList.append(n)
+		elif n <= last:
+			oddList.append(n)
+	print("Odd numbers:", end=" ")
+	print(oddList)
+	print("Even numbers:", end=" ")
+	print(evenList)
+
+playAgain = True
+while playAgain:
+	rCheck()
+	del evenList[:]
+	del oddList[:]
+	playAgain = input("Do you want to enter more numbers (y/n)? ")
+	while not playAgain == "y":
+		if not playAgain == "n":
+			playAgain = input("Error. Please select y/n: ")
+	if playAgain == "n":
+		print("Goodbye!")

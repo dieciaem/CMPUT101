@@ -17,6 +17,7 @@ def rCheck():
 			evenList.append(n)
 		elif n <= last:
 			oddList.append(n)
+	print("RESULTS:")
 	print("Odd numbers:", end=" ")
 	print(oddList)
 	print("Even numbers:", end=" ")
@@ -28,8 +29,8 @@ while playAgain:
 	del evenList[:]
 	del oddList[:]
 	playAgain = input("Do you want to enter more numbers (y/n)? ")
-	while not playAgain == "y":
-		if not playAgain == "n":
-			playAgain = input("Error. Please select y/n: ")
+	while not playAgain == "y" and not playAgain == "n":
+		playAgain = input("Error. Please select y/n: ")
 	if playAgain == "n":
+		playAgain = False
 		print("Goodbye!")
